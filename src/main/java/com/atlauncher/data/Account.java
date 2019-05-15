@@ -194,7 +194,7 @@ public class Account implements Serializable {
         } catch (IOException e) {
             LogManager.logStackTrace(e);
         }
-
+        image = ifSkinExists(image);
         BufferedImage main = image.getSubimage(8, 8, 8, 8);
         BufferedImage helmet = image.getSubimage(40, 8, 8, 8);
         BufferedImage head = new BufferedImage(8, 8, BufferedImage.TYPE_INT_ARGB);
@@ -207,6 +207,8 @@ public class Account implements Serializable {
 
         return new ImageIcon(head.getScaledInstance(32, 32, Image.SCALE_SMOOTH));
     }
+
+
 
     /**
      * Creates an {@link ImageIcon} of the Account's Minecraft skin.
@@ -234,6 +236,7 @@ public class Account implements Serializable {
             LogManager.logStackTrace(e);
         }
 
+        ifSkinExists(image);
         BufferedImage head = image.getSubimage(8, 8, 8, 8);
         BufferedImage helmet = image.getSubimage(40, 8, 8, 8);
         BufferedImage arm = image.getSubimage(44, 20, 4, 12);
@@ -705,5 +708,22 @@ public class Account implements Serializable {
         }
 
         return false;
+    }
+
+        /**
+     * Checks if the skin exists, and if it doesn't, uses the default skin.
+     * @author Dev-Osmium
+     * @param image Image to check
+     * @return Either the image that was passed in or the default skin
+     */
+    private BufferedImage ifSkinExists(BufferedImage image) {
+        if (image == null) {
+            try {
+            image = ImageIO.read(new File(App.settings.getSkinsDir(), "default.png"));
+            } catch (IOException e) {
+                LogManager.logStackTrace(e);
+            }
+        }
+        return image;
     }
 }
