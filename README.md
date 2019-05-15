@@ -1,4 +1,6 @@
 # ATLauncher
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FDev-Osmium%2FATLauncher.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FDev-Osmium%2FATLauncher?ref=badge_shield)
+
 
 ## What is it?
 
@@ -155,3 +157,6 @@ would like to leave cease and desist letters as a last resort.
 
 If you have any questions or concerns as to the license or what we consider to be good and bad in your clone/fork,
 please use the contact link in the section right above this one.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FDev-Osmium%2FATLauncher.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FDev-Osmium%2FATLauncher?ref=badge_large)
